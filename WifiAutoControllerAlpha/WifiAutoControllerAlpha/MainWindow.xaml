@@ -1,0 +1,66 @@
+﻿<Window x:Class="WifiAutoControllerAlpha.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525" KeyDown="WinKeyDown" KeyUp="WinKeyUp">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="10" />
+            <RowDefinition />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Slider x:Name="leftSlider" Grid.Column="1" Orientation="Vertical" Maximum="255" Minimum="-255" HorizontalAlignment="Stretch" Grid.Row="4" VerticalAlignment="Stretch" ValueChanged="LeftValueChanged"/>
+        <Slider x:Name="middleSlider" Grid.Column="3" Orientation="Vertical" Maximum="255" Minimum="-255" HorizontalAlignment="Stretch" Grid.Row="4" VerticalAlignment="Stretch" ValueChanged="MiddleValueChanged"/>
+        <Slider x:Name="rightSlider" Grid.Column="5" Orientation="Vertical" Maximum="255" Minimum="-255" HorizontalAlignment="Stretch" Grid.Row="4" VerticalAlignment="Stretch" ValueChanged="RightValueChanged"/>
+        <Label x:Name="leftLabel" Content="0" FontSize="5" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="2" VerticalAlignment="Stretch" RenderTransformOrigin="3.05,2.95" />
+        <Label x:Name="middleLabel" Content="0" FontSize="5" Grid.Column="3" HorizontalAlignment="Stretch" Grid.Row="2" VerticalAlignment="Stretch" />
+        <Label x:Name="rightLabel" Content="0" FontSize="5" Grid.Column="5" HorizontalAlignment="Stretch" Grid.Row="2" VerticalAlignment="Stretch" />
+        <Button Content="L" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="6" VerticalAlignment="Stretch" Click="LButtonClick" />
+        <Button Content="M" Grid.Column="3" HorizontalAlignment="Stretch" Grid.Row="6" VerticalAlignment="Stretch" Click="MButtonClick" />
+        <Button Content="R" Grid.Column="5" HorizontalAlignment="Stretch" Grid.Row="6" VerticalAlignment="Stretch" RenderTransformOrigin="7.325,0.625" Click="RButtonClick" />
+        <Grid HorizontalAlignment="Stretch" Grid.Row="4" VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="W" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" MouseDown="WMouseDown" MouseUp="WMouseUp"/>
+            <Button Content="S" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="2" VerticalAlignment="Stretch" MouseDown="SMouseDown" MouseUp="SMouseUp"/>
+            <Button Content="A" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="2" VerticalAlignment="Stretch" MouseDown="AMouseDown" MouseUp="AMouseUp" />
+            <Button Content="D" Grid.Column="3" HorizontalAlignment="Stretch" Grid.Row="2" VerticalAlignment="Stretch" MouseDown="DMouseDown" MouseUp="DmouseUp"/>
+        </Grid>
+        <Grid Grid.Column="6" HorizontalAlignment="Stretch" Grid.Row="4" VerticalAlignment="Stretch" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
+            <Slider x:Name="PWMSlider" Grid.Column="1" Maximum="255" Minimum="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" ValueChanged="PWMValueChanged" />
+            <Label x:Name="PWM" Content="0" FontSize="5" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+        </Grid>
+    </Grid>
+</Window>
